@@ -4,8 +4,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return '<h1>Hello, Docker World!</h1><p>This is a simple web app running inside a Docker container.</p>'
+    # 이 아래 return 부분을 원하는 HTML로 수정하세요.
+    return '''
+    <html>
+        <head>
+            <title>My New Page</title>
+        </head>
+        <body>
+            <h1>웹페이지 내용이 바뀌었습니다! ✅</h1>
+            <p>이 내용은 app.py 파일을 수정하여 변경되었습니다.</p>
+        </body>
+    </html>
+    '''
 
 if __name__ == '__main__':
-    # 컨테이너 외부에서 접근 가능하도록 host를 '0.0.0.0'으로 설정
     app.run(host='0.0.0.0', port=5000)
