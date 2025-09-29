@@ -8,6 +8,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# 패키지 목록 업데이트 및 net-tools 설치 (-y 옵션으로 자동 'Yes' 응답)
+RUN apt-get update && apt-get install -y net-tools
+
 # 4. 소스 코드 복사
 COPY . .
 
